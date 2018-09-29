@@ -6,6 +6,7 @@ import android.content.ComponentCallbacks;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 
 /**
  * Created by yangHaiTao on 2018/9/28.
@@ -20,7 +21,7 @@ public class Density {
     public static void setDensity(final Application application, float width) {
         appDisplayMetrics = application.getResources().getDisplayMetrics();
         WIDTH = width;
-
+        registerActivityLifecycleCallbacks(application);
         if (appDensity == 0) {
             appDensity = appDisplayMetrics.density;
             appScaledDensity = appDisplayMetrics.scaledDensity;
@@ -40,7 +41,7 @@ public class Density {
             });
         }
     }
-    private static void setDefault(Activity activity) {
+    public static void setDefault(Activity activity) {
         setAppOrientation(activity);
     }
 
@@ -59,6 +60,7 @@ public class Density {
         application.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle bundle) {
+                Log.d("TAG", "onActivityCreated:  =======================");
                 setDefault(activity);
             }
 

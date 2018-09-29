@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
+import com.example.haitao.myapplication.util.Density;
+
 import java.util.ArrayList;
 import java.util.List;
 
