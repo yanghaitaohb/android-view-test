@@ -39,5 +39,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(new HomeAdapter(this, list, heights));
 //        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
+
+        //加一个动画试试 view动画
+        TranslateAnimation animation = new TranslateAnimation(500,0,0,0);
+        animation.setDuration(700);
+
+        LayoutAnimationController controller = new LayoutAnimationController(animation);
+        controller.setOrder(LayoutAnimationController.ORDER_RANDOM);
+        controller.setDelay(0.1f);
+        recyclerView.setLayoutAnimation(controller);
     }
 }
