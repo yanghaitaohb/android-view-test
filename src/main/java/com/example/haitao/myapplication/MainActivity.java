@@ -7,6 +7,8 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.animation.LayoutAnimationController;
+import android.view.animation.TranslateAnimation;
 
 import com.example.haitao.myapplication.util.Density;
 
